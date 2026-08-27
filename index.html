@@ -310,6 +310,15 @@
   .foot-links{ display:flex; gap:28px; font-size:13.5px; color:var(--slate); }
   .foot-links a:hover{ color:var(--paper); }
   .foot-fine{ font-family:var(--mono); font-size:11px; color:var(--slate-dim); margin-top:28px; }
+  .foot-contact{ display:flex; gap:24px; flex-wrap:wrap; font-family:var(--mono); font-size:13px; color:var(--slate); }
+  .foot-contact a{ color:var(--paper); transition:color .2s ease; }
+  .foot-contact a:hover{ color:var(--copper); }
+  .contact-inline{
+    font-family:var(--mono); font-size:12.5px; color:var(--slate);
+    display:flex; gap:20px; flex-wrap:wrap; margin-top:8px;
+  }
+  .contact-inline a{ color:var(--teal); }
+  .contact-inline a:hover{ color:var(--copper); }
 </style>
 </head>
 <body>
@@ -477,6 +486,10 @@
         </div>
         <div class="send-status" id="sendStatus"></div>
         <div class="inquiry-note">Messages are reviewed by a HyTek Hub specialist. For urgent support, use the contact details below.</div>
+        <div class="contact-inline">
+          <a href="mailto:support@hytekhub.com">support@hytekhub.com</a>
+          <a href="tel:+2349155869045">+234 915 586 9045</a>
+        </div>
       </div>
     </div>
   </section>
@@ -498,6 +511,10 @@
         <a href="#sectors">Solutions</a>
         <a href="#work">Work</a>
         <a href="#inquiry">Start an inquiry</a>
+      </div>
+      <div class="foot-contact">
+        <a href="mailto:support@hytekhub.com">support@hytekhub.com</a>
+        <a href="tel:+2349155869045">+234 915 586 9045</a>
       </div>
     </div>
     <div class="foot-fine">© 2026 HyTek Hub IT Support & Services. Systems for how work actually happens.</div>
@@ -581,10 +598,10 @@
   const SYSTEM_PROMPT = `You are the HyTek Hub Assistant, the first point of contact on HyTek Hub IT Support & Services' website. HyTek Hub builds and supports IT solutions and custom applications across hospitality, government, business, home, school, and healthcare settings in Nigeria — recent examples include a direct landlord-to-tenant rental web app and multi-branch Excel Online operations systems for a hospitality business.
 
 You do two things:
-1. Answer general IT questions helpfully and concisely, like a knowledgeable support engineer.
-2. When someone describes a problem or project, ask 1-2 short, concrete follow-up questions to scope it (what's the current setup, what's not working, roughly how many people/locations involved), then summarize what you understood and tell them a HyTek Hub specialist will follow up within one business day. Ask for the best way to reach them (email or phone) if they haven't given one.
+1. Answer minor questions and general FAQs yourself — what HyTek Hub does, how the process works, general IT questions, pricing philosophy, timelines in general terms. Handle these fully and concisely, like a knowledgeable support engineer. Do not hand these off.
+2. The moment someone describes actual work — a real problem, project, or requirement specific to their business — do NOT try to solve or scope the technical details yourself beyond 1-2 short clarifying questions (current setup, what's not working, roughly how many people/locations involved). Then summarize what you understood and tell them clearly that this will be sent to the HyTek Hub team at support@hytekhub.com for a specialist to follow up, normally within one business day. Ask for the best way to reach them (email or phone) if they haven't given one, and prompt them to use the "Send inquiry to HyTek Hub" button below the chat so it reaches support@hytekhub.com directly. For anything urgent, point them to support@hytekhub.com or +234 915 586 9045.
 
-Keep responses short (2-5 sentences), warm, plain-spoken, and specific — never generic corporate language. Never invent pricing or timelines beyond "a specialist will follow up." If asked something outside IT/software entirely, gently redirect to what HyTek Hub can help with.`;
+Keep responses short (2-5 sentences), warm, plain-spoken, and specific — never generic corporate language. Never invent pricing or timelines beyond "a specialist will follow up." Never attempt to solve, quote, or commit to actual project work yourself — that always goes to the team. If asked something outside IT/software entirely, gently redirect to what HyTek Hub can help with.`;
 
   function addMessage(text, role){
     const div = document.createElement('div');

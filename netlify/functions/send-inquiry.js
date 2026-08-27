@@ -73,7 +73,6 @@ exports.handler = async (event) => {
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('Resend API error:', response.status, JSON.stringify(data));
       return { statusCode: response.status, body: JSON.stringify({ error: data }) };
     }
 

@@ -44,6 +44,10 @@ exports.handler = async (event) => {
 
     const data = await response.json();
 
+    if (!response.ok) {
+      console.error('Anthropic API error:', response.status, JSON.stringify(data));
+    }
+
     return {
       statusCode: response.ok ? 200 : response.status,
       headers: { 'Content-Type': 'application/json' },

@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HyTek Hub — IT Solutions Built Around Real Workflows, Not Templates</title>
+<meta name="description" content="HyTek Hub builds and supports IT solutions across hospitality, government, business, home, school, and healthcare — custom applications and systems built around how work actually happens.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hytekhub.com/">
+<meta property="og:title" content="HyTek Hub — IT Solutions Built Around Real Workflows, Not Templates">
+<meta property="og:description" content="Custom IT solutions and applications across hospitality, government, business, home, school, and healthcare — built around how work actually happens, not off a template.">
+<meta property="og:image" content="https://www.hytekhub.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HyTek Hub — IT Solutions Built Around Real Workflows, Not Templates">
+<meta name="twitter:description" content="Custom IT solutions and applications across hospitality, government, business, home, school, and healthcare — built around how work actually happens, not off a template.">
+<meta name="twitter:image" content="https://www.hytekhub.com/og-image.png">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230B1220'/%3E%3Ccircle cx='32' cy='42' r='3.6' fill='%23FFFFFF'/%3E%3Cpath d='M23 34 Q32 26 41 34' stroke='%23FFFFFF' stroke-width='4.4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M15 25 Q32 11 49 25' stroke='%23FFFFFF' stroke-width='4.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,7 +257,20 @@
     padding:14px 20px; border-bottom:1px solid var(--line-soft); background:var(--panel-2);
   }
   .inquiry-topbar .who{ display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12.5px; color:var(--slate); }
-  .inquiry-topbar .who .live{ width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal); }
+  .inquiry-topbar .who .live{
+    position:relative; width:7px; height:7px; border-radius:50%;
+    background:var(--teal); box-shadow:0 0 6px var(--teal);
+    animation: liveDot 2s ease-in-out infinite;
+  }
+  .inquiry-topbar .who .live::after{
+    content:''; position:absolute; inset:-5px; border-radius:50%;
+    border:1px solid var(--teal); animation: liveRing 2s ease-out infinite;
+  }
+  @keyframes liveDot{ 0%,100%{ opacity:1; } 50%{ opacity:0.55; } }
+  @keyframes liveRing{
+    0%{ transform:scale(0.5); opacity:0.7; }
+    100%{ transform:scale(2.6); opacity:0; }
+  }
   .inquiry-topbar .mode{ font-family:var(--mono); font-size:11px; color:var(--copper); letter-spacing:0.06em; }
 
   .chat-log{
@@ -581,7 +609,7 @@
   const send = document.getElementById('chatSend');
 
   // ⚠️ Replace with your own free key from web3forms.com — it's meant to be public/client-side.
-  const WEB3FORMS_ACCESS_KEY = "2b24d273-59f5-43b7-b4df-18ff579843da";
+  const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
 
   const SECTORS = ["Hospitality", "Government", "Business / Work", "Home", "School", "Hospital", "Something else"];
   const state = { sector: null, issue: null, email: null };

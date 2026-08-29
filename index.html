@@ -206,8 +206,9 @@
   .sector-card p{ color:var(--slate); font-size:14px; }
 
   /* ---------- Projects ---------- */
-  .proj-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-  @media (max-width:820px){ .proj-grid{ grid-template-columns:1fr; } }
+  .proj-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
+  @media (max-width:980px){ .proj-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:640px){ .proj-grid{ grid-template-columns:1fr; } }
   .proj-card{
     border:1px solid var(--line-soft); background:var(--panel);
     padding:32px; border-radius:var(--radius);
@@ -460,6 +461,15 @@
             <span class="tag">Excel Online</span><span class="tag">Cross-branch</span><span class="tag">No new software to learn</span>
           </div>
           <span class="proj-link" style="color:var(--slate);">Internal deployment — Awka & Nnewi</span>
+        </div>
+        <div class="proj-card reveal">
+          <span class="badge badge-app">APPLICATION</span>
+          <h3>Havilah Suite Ledger</h3>
+          <p class="desc">A standalone income, expense, and credit tracking web app for Havilah Suite Ltd — separate logins for the Awka and Nnewi branches, so each admin only sees their own dashboard.</p>
+          <div class="tag-row">
+            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">Supabase</span>
+          </div>
+          <a href="https://havilahledger.netlify.app/" target="_blank" rel="noopener" class="proj-link">havilahledger.netlify.app →</a>
         </div>
       </div>
     </div>

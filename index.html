@@ -19,6 +19,14 @@
 <meta name="twitter:description" content="Custom IT solutions and applications across hospitality, government, business, home, school, and healthcare — built around how work actually happens, not off a template.">
 <meta name="twitter:image" content="https://www.hytekhub.com/og-image.png">
 
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B1220">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HyTek Hub">
+<link rel="apple-touch-icon" href="/icon-180.png">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230B1220'/%3E%3Ccircle cx='32' cy='42' r='3.6' fill='%23FFFFFF'/%3E%3Cpath d='M23 34 Q32 26 41 34' stroke='%23FFFFFF' stroke-width='4.4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M15 25 Q32 11 49 25' stroke='%23FFFFFF' stroke-width='4.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -482,12 +490,12 @@
         </div>
         <div class="proj-card reveal">
           <span class="badge badge-app">APPLICATION</span>
-          <h3>Real-Time Bar Inventory & Sales Tracker</h3>
-          <p class="desc">A branch-scoped inventory system where bar staff record their own sales as they happen — stock, pricing tiers, and write-offs tracked live, replacing manual stock sheets.</p>
+          <h3>Bar, Restaurant & Room Billing System</h3>
+          <p class="desc">A branch-scoped system for bar, restaurant, and stock management — staff record sales as they happen and can charge orders straight to a guest's room, with all stock and write-offs tracked live.</p>
           <div class="tag-row">
             <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">Supabase</span>
           </div>
-          <a href="https://havilahinventory.netlify.app/" target="_blank" rel="noopener" class="proj-link">havilahinventory.netlify.app →</a>
+          <a href="https://havilahsuite.netlify.app/" target="_blank" rel="noopener" class="proj-link">havilahsuite.netlify.app →</a>
         </div>
       </div>
     </div>
@@ -771,6 +779,13 @@
   send.addEventListener('click', handleSend);
   input.addEventListener('keydown', (e) => { if(e.key === 'Enter') handleSend(); });
 })();
+
+// ---------- PWA install support ----------
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
 </script>
 
 </body>
